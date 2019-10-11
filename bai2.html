@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Frog (name,weight,speed,status) {
+        this.name=name;
+        this.weight=weight;
+        this.speed=speed;
+        this.status=status;
+        this.getStatus=function () {
+            return this.status;
+        }
+    this.setStatus=function (newStatus) {
+        this.status=newStatus;
+    }
+    this.sound=function (stringFrog) {
+        if (this.status){
+    console.log(stringFrog)
+        }
+    }
+ }
+    let frog1=new Frog('frog1',20,2,true);
+    let frog2= new Frog('frog2',25,4,false);
+    let frog3= new Frog('frog3',27,6,true);
+    function Snake(name,weight,speed) {
+        this.name = name;
+        this.weight = weight;
+        this.speed = speed;
+        this.sound = function (stringSnake) {
+            console.log(stringSnake);
+        }
+        this.catch = function (frog) {
+            if(this.speed>snake.speed)
+            {
+                console.log('Rắn' + this.name + ' đã bắt được con ếch ' + frog.name);
+            }
+            else {
+                console.log('Rắn' + this.name + ' không bắt được con ếch ' + frog.name);
+            }
+        }
+        this.eat = function (frog) {
+            if(frog.getStatus())
+            {
+                this.weight += frog.weight;
+                frog.setStatus(false);
+            }
+            else
+            {
+                console.log('con ếch này đã bị ăn');
+            }
+        }
+    }
+    let snake1 = new Snake('snake1',60,70);
+</script>
+</body>
+</html>
